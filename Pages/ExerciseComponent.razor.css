@@ -1,0 +1,21 @@
+.question-container{
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid crimson;
+}
+
+.progress-bar{
+    background-color: aliceblue;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.progress{
+    background-color: lightblue;
+    height: 100%;
+}
+
+.timer-bar{
+    margin-top: 10px;
+    font-weight: bold;
+}

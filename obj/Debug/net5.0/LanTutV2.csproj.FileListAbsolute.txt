@@ -1,0 +1,6 @@
+C:\Users\Ngoni\source\repos\LanTutor\LanTutV2\obj\Debug\net5.0\LanTutV2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ngoni\source\repos\LanTutor\LanTutV2\obj\Debug\net5.0\LanTutV2.AssemblyInfoInputs.cache
+C:\Users\Ngoni\source\repos\LanTutor\LanTutV2\obj\Debug\net5.0\LanTutV2.AssemblyInfo.cs
+C:\Users\Ngoni\source\repos\LanTutor\LanTutV2\obj\Debug\net5.0\LanTutV2.csproj.CoreCompileInputs.cache
+C:\Users\Ngoni\source\repos\LanTutor\LanTutV2\obj\Debug\net5.0\LanTutV2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ngoni\source\repos\LanTutor\LanTutV2\obj\Debug\net5.0\LanTutV2.RazorComponent.input.cache

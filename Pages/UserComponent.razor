@@ -1,0 +1,35 @@
+@using LanTutV2.Data.Models
+
+<div class = "user-container">
+    <h3>User Information</h3>
+    <p>
+        User Name: @UserName
+    </p>
+    <p>
+        User Language Level: @Level
+    </p>
+    <p>
+        Time Spent: @TimeSpent
+    </p>
+</div>
+
+@code{
+    [Parameter]
+    public string UserName
+    {
+        get;
+        set;
+    }
+    [Parameter]
+    public LanguageLevel Level
+    {
+        get;
+        set;
+    }
+    [Parameter]
+    public string TimeSpent
+    {
+        get;
+        set;
+    }
+}

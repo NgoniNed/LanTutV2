@@ -1,0 +1,68 @@
+@page "/admin/exercisedifficulty"
+@using LanTutor.Data.Models
+@using LanTutV2.Components
+@inject ILanTutorAPI api
+<h3>ExerciseDifficulty</h3>
+<EditForm OnValidSubmit="Save" Model="Item">
+    <DataAnnotationsValidator />
+    <CustomCssClassProvider ProviderType="BootstrapFieldCssClassProvider" />
+    <InputText @bind-Value="@Item.Name" />
+    <ValidationMessage For="@(()=>Item.Name)" />
+    <button class="btn btn-success" type="submit">Save</button>
+</EditForm>
+<ItemList Items="Items" DeleteEvent="@Delete" SelectEvent="@Select" ItemType="ExerciseDifficulty">
+    <ItemTemplate>
+        @{
+            var item = context as ExerciseDifficulty;
+            if (item != null)
+            {
+                @item.Name;
+            }
+        }
+    </ItemTemplate>
+</ItemList>
+
+@code {
+    private List<ExerciseDifficulty> Items { get; set; } = new List<ExerciseDifficulty>();
+    public ExerciseDifficulty Item { get; set; } = new ExerciseDifficulty();
+
+    protected async override Task OnInitializedAsync()
+    {
+        Items = await api.GetExerciseDifficultiesAsync();
+        await base.OnInitializedAsync();
+    }
+
+    private async Task Delete(ExerciseDifficulty difficulty)
+    {
+        try
+        {
+            await api.DeleteExerciseDifficultyAsync(difficulty);
+            Items.Remove(difficulty);
+        }
+        catch { }
+    }
+
+    private async Task Save()
+    {
+        try
+        {
+            if (Item.ID == 0)
+            {
+                Items.Add(Item);
+            }
+            await api.SaveExerciseDifficultyAsync(Item);
+            Item = new ExerciseDifficulty();
+        }
+        catch { }
+    }
+
+    private Task Select(ExerciseDifficulty difficulty)
+    {
+        try
+        {
+            Item = difficulty;
+        }
+        catch { }
+        return Task.CompletedTask;
+    }
+}

@@ -1,0 +1,26 @@
+@using LanTutV2.Data.Models
+
+<div class="horizontal-container">
+    <RotatingComponent @bind-SelectedLanguage="userLEU.languageInfor.CurrentLanguage" LanguageOptions=@userLEU.languageInfor.LanguageList/>
+    <UserComponent UserName=@userLEU.userInfor.UserName Level=@userLEU.userInfor.Level TimeSpent=@userLEU.userInfor.TimeSpent/>
+    <LanguageComponent ExeInfor=@userLEU.exerciseInfor/>
+</div>
+@code{
+    //rotating component has two way data binding property
+    //it needs to know the current loaded language
+    //number of available languages
+    [Parameter]
+    public LEU userLEU
+    {
+        get;
+        set;
+    }
+    [Parameter]
+    public EventCallback<LEU> userLEUChanged
+    {
+        get;
+        set;
+    }
+    
+    
+}

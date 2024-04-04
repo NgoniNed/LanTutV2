@@ -1,0 +1,64 @@
+@using LanTutV2.Data.Models
+<h3>ExerciseComponent</h3>
+<div class="question-container">
+    <h4>
+        Question @_questionTracker of @_totalQuestionsAvailable
+    </h4>
+    <p>
+        @_exerciseQuestion._question
+    </p>
+    @foreach (var answer in _exerciseQuestion._answers)
+    {
+        <button @onclick="(e => SelectAnswer(answer))">@answer</button>
+    }
+    <div class="progress-bar">
+        <div class="progress" style="width: @_progressPercentage%">
+            
+        </div>
+    </div>
+    <div class="timer-bar">
+        Time Remaining: @_timeSpentOnQuestion seconds
+    </div>
+</div>
+
+@code {
+    private int _questionTracker;
+    [Parameter]
+    public Exercise _lExercise
+    {
+        get;
+        set;
+    }
+    private int _totalQuestionsAvailable;
+    private double _timeSpentOnQuestion;
+    private int _progressPercentage;
+
+    private Question _exerciseQuestion;
+        
+    protected override Task OnInitializedAsync()
+    {
+        _questionTracker = 1;
+        _progressPercentage = 1;
+        //request first question on component initialization
+        _exerciseQuestion = _lExercise.GetQuestion();
+        _totalQuestionsAvailable = _lExercise.GetQuestionSetCount;
+
+        return base.OnInitializedAsync();
+    }
+
+    private void SelectAnswer(string answer)
+    {
+        _progressPercentage = _progressPercentage + 5;
+        _questionTracker++;
+        //check user response
+        _exerciseQuestion.CheckAnswer(answer);
+        //reset the question tracker
+        if(_questionTracker > _totalQuestionsAvailable)
+        {
+            _questionTracker = 1;
+            _progressPercentage=1;
+        }
+        //request subsequent questions
+        _exerciseQuestion = _lExercise.GetQuestion();
+    }
+}

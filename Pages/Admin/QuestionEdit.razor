@@ -1,0 +1,103 @@
+@page "/admin/questions/new"
+@page "/admin/questions/{ID:int}"
+@inject NavigationManager manager
+@using LanTutor.Data.Models
+@inject ILanTutorAPI api
+@using Markdig;
+
+<EditForm Model="lQuestion" OnValidSubmit="SavelQuestion">
+    <DataAnnotationsValidator />
+    <CustomCssClassProvider ProviderType="BootstrapFieldCssClassProvider" />
+    <InputText @bind-Value="lQuestion.lExerciseQuestion"></InputText>
+    <InputDate @bind-Value="lQuestion.Answer"></InputDate>
+    <InputSelect @bind-Value="selectedDifficulty">
+        <option value="0" disabled>None selected</option>
+        @foreach (var Difficulty in ExerciseDifficulties)
+    {
+    <option value="@Difficulty.ID">@Difficulty.Name</option>
+}
+    </InputSelect>
+    <ul>
+        @foreach (var languag in Languages)
+        {
+        <li>
+            @languag.Name
+            @if (lQuestion.Language.ID == languag.ID)
+            {
+                <button type="button" >Remove</button>
+            }
+            else
+            {
+                <button type="button" >Add</button>
+            }
+        </li>
+        }
+    </ul>
+        <InputTextAreaOnInput @bind-Value="lQuestion.lExerciseQuestion" @onkeyup="UpdateHTML"></InputTextAreaOnInput>
+        <button type="submit" class="btn btn-success">Save</button>
+    </EditForm>
+
+@((MarkupString)markDownAsHTML)
+
+@code{
+    [Parameter]
+    public int? ID { get; set; }
+    ExerciseQuestion lQuestion { get; set; } = new ExerciseQuestion();
+    List<ExerciseDifficulty> ExerciseDifficulties { get; set; } = new();
+    List<LanguageOptions> Languages { get; set; } = new();
+    int selectedDifficulty = 0;
+    string? markDownAsHTML { get; set; }
+
+    MarkdownPipeline pipeline;
+
+    protected override Task OnInitializedAsync()
+    {
+        pipeline = new MarkdownPipelineBuilder()
+                 .UseEmojiAndSmiley()
+                 .Build();
+        return base.OnInitializedAsync();
+    }
+
+    protected void UpdateHTML()
+    {
+        markDownAsHTML = Markdig.Markdown.ToHtml(lQuestion.lExerciseQuestion, pipeline);
+    }
+
+    bool hasLanguage(LanTutor.Data.Models.LanguageOptions language)
+    {
+        return lQuestion.Language.Equals(language);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (ID != null)
+        {
+            lQuestion = await api.GetExerciseQuestionAsync(ID.Value);
+            if (lQuestion.Difficulty != null)
+            {
+            selectedDifficulty = lQuestion.Difficulty.ID;
+            }
+
+            UpdateHTML();
+
+        }
+
+        ExerciseDifficulties = await api.GetExerciseDifficultiesAsync();
+        Languages = await api.GetLanguageOptionsAsync();
+        base.OnParametersSet();
+    }
+    public async Task SavelQuestion()
+    {
+        if (selectedDifficulty != 0 && ExerciseDifficulties != null)
+        {
+            var Difficulty = ExerciseDifficulties.FirstOrDefault(c => c.ID == selectedDifficulty);
+            if (Difficulty != null)
+            {
+                lQuestion.Difficulty = Difficulty;
+            }
+        }
+
+        await api.SaveExerciseQuestionAsync(lQuestion);
+        manager.NavigateTo("/admin/questions");
+    }
+}

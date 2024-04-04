@@ -1,0 +1,24 @@
+@using LanTutV2.Data.Models
+<div class="language-container">
+    <h3>
+        Language Information
+    </h3>
+    <p>
+        Language Name: @ExeInfor.LanguageName
+    </p>
+    <p>
+        Exercise Category: @ExeInfor.ExerciseCategory
+    </p>
+    <p>
+        Exercise Difficulty: @ExeInfor.ExerciseDifficulty
+    </p>
+</div>
+
+@code{
+    [Parameter]
+    public ExerciseStruct ExeInfor
+    {
+        get;
+        set;
+    }
+}

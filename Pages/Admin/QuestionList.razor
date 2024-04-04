@@ -1,0 +1,25 @@
+@page "/admin/questions"
+@using LanTutor.Data.Models
+@inject ILanTutorAPI api
+
+<a href="/admin/questions/new">New Question</a>
+<ul>
+    <Virtualize ItemsProvider="LoadQuestions" Context="p">
+        <li>@p.Language <a href="/admin/questions/@p.ID">@p.lExerciseQuestion</a></li>
+    </Virtualize>
+</ul>
+
+@code{
+    public int TotalQuestions { get; set; }
+    private async ValueTask<ItemsProviderResult<ExerciseQuestion>> LoadQuestions(ItemsProviderRequest request)
+    {
+        if (TotalQuestions == 0)
+        {
+            TotalQuestions = await api.GetExerciseQuestionsCountAsync();
+        }
+        var numbquestions = Math.Min(request.Count, TotalQuestions - request.StartIndex);
+        var posts = await api.GetExerciseQuestionsAsync(numbquestions, request.StartIndex);
+
+        return new ItemsProviderResult<ExerciseQuestion>(posts, TotalQuestions);
+    }
+}    

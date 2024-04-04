@@ -1,0 +1,54 @@
+@using System
+
+<div class="rotating-wheel">
+    <div class="wheel">
+        @foreach(var lang in LanguageOptions)
+        {
+            <div class = "option" style ="@($"transform: rotate({-RotationAngle}deg)")">
+                <p>
+                    @lang
+                </p>
+            </div>
+            RotationAngle += AngleIncrement;
+        }
+    </div>
+</div>
+<div>
+    <h3>
+        Current Language:
+    </h3>
+    <h4>
+        @SelectedLanguage
+    </h4>
+</div>
+
+@code{
+    [Parameter]
+    public string SelectedLanguage
+    {
+        get;
+        set;
+    }
+    [Parameter]
+    public List<string> LanguageOptions
+    {
+        get;
+        set;
+    }
+    [Parameter]
+    public EventCallback<string> SelectedLanguageChanged
+    {
+        get;
+        set;
+    }
+
+    protected override void OnInitialized()
+    {
+        AngleIncrement =   360/LanguageOptions.Count;
+        RotationAngle = 0;
+    }
+
+    private double AngleIncrement;
+
+    private double RotationAngle;
+}

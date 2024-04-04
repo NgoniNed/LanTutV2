@@ -1,0 +1,22 @@
+@page "/tutor"
+@using LanTutV2.Data.Models
+@using LanTutV2.Data.Services
+@inject LanTutSessionService SessionService
+
+<PageTitle>
+    Tutoring @session.SessionLEU.GetLanguageInformation().CurrentLanguage
+</PageTitle>
+
+<HorizontalComponent @bind-userLEU="session.SessionLEU"/>
+<ExerciseComponent _lExercise=@session.SessionExercise/>
+
+@code{
+    private LanTutSession? session;
+
+    protected override async Task OnInitializedAsync()
+    {
+        session = new LanTutSession();
+        session.SessionLEU = await SessionService.GetSessionLEUAsync();
+        session.SessionExercise = await SessionService.GetSessionExerciseAsync();
+    }    
+}
