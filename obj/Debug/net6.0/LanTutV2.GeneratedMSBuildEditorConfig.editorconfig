@@ -1,0 +1,143 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LanTutV2
+build_property.RootNamespace = LanTutV2
+build_property.ProjectDir = /media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2
+build_property._RazorSourceGeneratorDebug = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Components/ItemList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9JdGVtTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Components/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Mb2dpbkRpc3BsYXkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/Admin/DifficultyList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vRGlmZmljdWx0eUxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/Admin/LanguageList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vTGFuZ3VhZ2VMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/Admin/QuestionEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vUXVlc3Rpb25FZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/Admin/QuestionList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vUXVlc3Rpb25MaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/DeleteView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGVsZXRlVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/ExportView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXhwb3J0Vmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/GeneralView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR2VuZXJhbFZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/ImportView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW1wb3J0Vmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/LogOutView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9nT3V0Vmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/PreferencesView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJlZmVyZW5jZXNWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/ProfileOptions.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZmlsZU9wdGlvbnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/Tutor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHV0b3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/UserComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlckNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/ExerciseComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXhlcmNpc2VDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-o0vaauway0
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/HorizontalComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSG9yaXpvbnRhbENvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qnuoit2lj4
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/LanguageComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGFuZ3VhZ2VDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-qbpk2f9j7i
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZmlsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-9n8bgij6nl
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/RotatingComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUm90YXRpbmdDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3613tp5iuw
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-pzc61z3yl3
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-i5snu26umk
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

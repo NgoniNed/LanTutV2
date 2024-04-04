@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FjNGtYy/7FmmsHjcCfrxjL5m46pgBvI15DP+NXEcJL2h0pQhS32ICmhHVIB7KMmAIeu/yz05cv1FJYmki7IWGw==",
+  "dgSpecHash": "FlD5n6GT5NEGUiwmisUh70vmbSVP9ke7GKTb25y6z3moUoXQvpDhBEHjnQAJTHuZgjqAsLRR4xSn9JuWLSjrGA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ngoni\\source\\repos\\LanTutor\\LanTutV2\\LanTutV2.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/LanTutV2.csproj",
+  "expectedPackageFiles": [
+    "/home/renee/.nuget/packages/microsoft.netcore.app.ref/6.0.28/microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "/home/renee/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.28/microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512",
+    "/home/renee/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.28/microsoft.netcore.app.host.linux-x64.6.0.28.nupkg.sha512"
+  ],
   "logs": []
 }

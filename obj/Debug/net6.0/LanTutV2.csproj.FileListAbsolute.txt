@@ -1,0 +1,7 @@
+/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net6.0/LanTutV2.GeneratedMSBuildEditorConfig.editorconfig
+/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net6.0/LanTutV2.AssemblyInfoInputs.cache
+/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net6.0/LanTutV2.AssemblyInfo.cs
+/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net6.0/LanTutV2.csproj.CoreCompileInputs.cache
+/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net6.0/LanTutV2.MvcApplicationPartsAssemblyInfo.cache
+/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net6.0/LanTutV2.RazorAssemblyInfo.cache
+/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net6.0/LanTutV2.RazorAssemblyInfo.cs

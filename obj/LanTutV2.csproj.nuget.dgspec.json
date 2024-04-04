@@ -1,36 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ngoni\\source\\repos\\LanTutor\\LanTutV2\\LanTutV2.csproj": {}
+    "/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/LanTutV2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ngoni\\source\\repos\\LanTutor\\LanTutV2\\LanTutV2.csproj": {
+    "/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/LanTutV2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ngoni\\source\\repos\\LanTutor\\LanTutV2\\LanTutV2.csproj",
+        "projectUniqueName": "/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/LanTutV2.csproj",
         "projectName": "LanTutV2",
-        "projectPath": "C:\\Users\\Ngoni\\source\\repos\\LanTutor\\LanTutV2\\LanTutV2.csproj",
-        "packagesPath": "C:\\Users\\Ngoni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ngoni\\source\\repos\\LanTutor\\LanTutV2\\obj\\",
+        "projectPath": "/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/LanTutV2.csproj",
+        "packagesPath": "/home/renee/.nuget/packages/",
+        "outputPath": "/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ngoni\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/renee/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\Ngoni\\.nuget\\packages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -38,21 +32,41 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.28, 6.0.28]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.28, 6.0.28]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.28, 6.0.28]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -61,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.128\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }
