@@ -1,10 +1,8 @@
 @page "/admin/questions/new"
 @page "/admin/questions/{ID:int}"
 @inject NavigationManager manager
-@using LanTutor.Data.Models
+@using LanTutorV2.Data.Models
 @inject ILanTutorAPI api
-@using Markdig;
-
 <EditForm Model="lQuestion" OnValidSubmit="SavelQuestion">
     <DataAnnotationsValidator />
     <CustomCssClassProvider ProviderType="BootstrapFieldCssClassProvider" />
@@ -48,22 +46,22 @@
     int selectedDifficulty = 0;
     string? markDownAsHTML { get; set; }
 
-    MarkdownPipeline pipeline;
+    //MarkdownPipeline pipeline;
 
     protected override Task OnInitializedAsync()
     {
-        pipeline = new MarkdownPipelineBuilder()
-                 .UseEmojiAndSmiley()
-                 .Build();
+        //pipeline = new MarkdownPipelineBuilder()
+        //         .UseEmojiAndSmiley()
+        //         .Build();
         return base.OnInitializedAsync();
     }
 
     protected void UpdateHTML()
     {
-        markDownAsHTML = Markdig.Markdown.ToHtml(lQuestion.lExerciseQuestion, pipeline);
+        //markDownAsHTML = Markdig.Markdown.ToHtml(lQuestion.lExerciseQuestion, pipeline);
     }
 
-    bool hasLanguage(LanTutor.Data.Models.LanguageOptions language)
+    bool hasLanguage(LanTutorV2.Data.Models.LanguageOptions language)
     {
         return lQuestion.Language.Equals(language);
     }

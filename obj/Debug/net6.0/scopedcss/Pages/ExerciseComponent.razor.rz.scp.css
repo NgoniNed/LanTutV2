@@ -1,0 +1,21 @@
+.question-container[b-o0vaauway0]{
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid crimson;
+}
+
+.progress-bar[b-o0vaauway0]{
+    background-color: aliceblue;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.progress[b-o0vaauway0]{
+    background-color: lightblue;
+    height: 100%;
+}
+
+.timer-bar[b-o0vaauway0]{
+    margin-top: 10px;
+    font-weight: bold;
+}
