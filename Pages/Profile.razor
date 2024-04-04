@@ -4,7 +4,64 @@
 <PageTitle>
     @UserName Profile
 </PageTitle>
+<div class="profile">
+        <h1>User Name</h1>
+        <p>Email: user@example.com</p>
 
+        <div class="language-preferences">
+            <h2>Language Preferences</h2>
+            <ul>
+                <li>Arabic</li>
+                <li>French</li>
+                <li>Dutch</li>
+                <li>Russian</li>
+            </ul>
+            <button>Edit Preferences</button>
+        </div>
+
+        <div class="learning-progress">
+            <h2>Learning Progress</h2>
+            <p>Arabic: 60% completed</p>
+            <p>French: 70% completed</p>
+            <p>Dutch: 60% completed</p>
+            <p>Russian: 20% completed</p>
+        </div>
+
+        <!-- Other sections like Upcoming Lessons, Settings, Feedback, Achievements, Edit Profile can be added here -->
+    </div>
+<!-- MainLayout.razor -->
+<div class="navbar">
+    <LTNavLink LinkText="Profile" href="/profile" />
+    <LTNavLink LinkText="Lessons" href="/lessons" />
+    <LTNavLink LinkText="Schedule" href="/schedule" />
+    <!-- Add more LTNavLink components as needed -->
+</div>
+<style>
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .navbar a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #555;
+        color: white;
+        text-decoration: none;
+        margin-right: -10px; /* Creates the overlap effect */
+    }
+
+    .navbar a:hover {
+        background-color: #777;
+    }
+
+</style>
 @code{
     private string UserName
     {

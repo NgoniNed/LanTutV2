@@ -1,0 +1,10 @@
+<!-- NavLink.razor -->
+<a @attributes="AdditionalAttributes" class="nav-link">@LinkText</a>
+
+@code {
+    [Parameter]
+    public string LinkText { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> AdditionalAttributes { get; set; }
+}
