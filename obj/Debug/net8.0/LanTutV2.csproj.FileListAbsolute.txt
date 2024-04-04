@@ -63,3 +63,4 @@
 /media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net8.0/LanTutV2.pdb
 /media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net8.0/LanTutV2.genruntimeconfig.cache
 /media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net8.0/ref/LanTutV2.dll
+/media/renee/7858E39858E35382/Users/Ngoni/source/repos/LanTutor/LanTutV2/obj/Debug/net8.0/scopedcss/Pages/Flag.razor.rz.scp.css

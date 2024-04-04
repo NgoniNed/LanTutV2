@@ -1,0 +1,17 @@
+.flag {
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: wind 2s infinite alternate;
+}
+
+@keyframes wind {
+    0% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(-10deg);
+    }
+}

@@ -1,0 +1,17 @@
+.flag[b-c19wgyj91m] {
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: wind-b-c19wgyj91m 2s infinite alternate;
+}
+
+@keyframes wind-b-c19wgyj91m {
+    0% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(-10deg);
+    }
+}

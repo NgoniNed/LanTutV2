@@ -1,0 +1,38 @@
+
+<div class="flag">
+    <svg width="200" height="150">
+        @foreach (var color in flagColors.Split(','))
+        {
+            <rect x="0" y="@((flagColors.Split(',').ToList().IndexOf(color)) * 50)" width="200" height="50" fill="@color" />
+        }
+    </svg>
+</div>
+
+@code {
+    [Parameter]
+    public string Country { get; set; }
+
+    string flagColors;
+
+    protected override void OnInitialized()
+    {
+        flagColors = GetFlagColors(Country);
+    }
+
+    public static string GetFlagColors( string flag)
+    {
+        switch (flag)
+        {
+            case "Arabic":
+                return "#CE1126,#FFFFFF,#008000"; // Red, White, Green colors
+            case "Netherlands":
+                return "#21468B,#FFFFFF,#AE1C28"; // Blue, White, Red colors
+            case "France":
+                return "#0055A4,#FFFFFF,#EF4135"; // Blue, White, Red colors
+            case "Russia":
+                return "#FFFFFF,#D52B1E,#0033A0"; // White, Red, Blue colors
+            default:
+                return string.Empty;
+        }
+    }
+}

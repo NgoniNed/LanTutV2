@@ -20,6 +20,24 @@
     margin-top: 10px;
     font-weight: bold;
 }
+/* _content/LanTutV2/Pages/Flag.razor.rz.scp.css */
+.flag[b-c19wgyj91m] {
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: wind-b-c19wgyj91m 2s infinite alternate;
+}
+
+@keyframes wind-b-c19wgyj91m {
+    0% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(-10deg);
+    }
+}
 /* _content/LanTutV2/Pages/HorizontalComponent.razor.rz.scp.css */
 .horizontal-container[b-qnuoit2lj4]{
     display: flex;
