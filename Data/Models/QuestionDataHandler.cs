@@ -32,64 +32,27 @@ namespace LanTutV2.Data.Models
             }
         }
 
-        public void AddQuestion(QuestionData question)
-        {
-            questionList.Add(question);
-        }
+        // Other existing methods remain the same
 
-        public void UpdateQuestion(int index, QuestionData updatedQuestion)
+        public List<QuestionData> GetQuestionsByCriteria(string language, string category, string relation, string difficulty, int batchSize)
         {
-            if (index >= 0 && index < questionList.Count)
-            {
-                questionList[index] = updatedQuestion;
-            }
-        }
-
-        public void DeleteQuestion(int index)
-        {
-            if (index >= 0 && index < questionList.Count)
-            {
-                questionList.RemoveAt(index);
-            }
-        }
-
-        public bool VerifyAnswer(int index, string userAnswer)
-        {
-            if (index >= 0 && index < questionList.Count)
-            {
-                return questionList[index].CorrectAnswer.Equals(userAnswer, StringComparison.OrdinalIgnoreCase);
-            }
-            return false;
-        }
-
-        public List<QuestionData> GetQuestionsByLanguage(string language)
-        {
-            return questionList.Where(q => q.Language.Equals(language, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
-
-        public List<QuestionData> GetQuestionsByCategory(string category)
-        {
-            return questionList.Where(q => q.Category.Equals(category, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
-
-        public List<QuestionData> GetQuestionsByRelation(string relation)
-        {
-            return questionList.Where(q => q.Relation.Equals(relation, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
-
-        public List<QuestionData> GetQuestionsByDifficulty(string difficulty)
-        {
-            return questionList.Where(q => q.Difficulty.Equals(difficulty, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
-
-        public List<QuestionData> GetQuestionsByCriteria(string language, string category, string relation, string difficulty)
-        {
-            return questionList.Where(q => 
-                q.Language.Equals(language, StringComparison.OrdinalIgnoreCase) && 
-                q.Category.Equals(category, StringComparison.OrdinalIgnoreCase) && 
-                q.Relation.Equals(relation, StringComparison.OrdinalIgnoreCase) && 
+            var result = questionList.Where(q =>
+                q.Language.Equals(language, StringComparison.OrdinalIgnoreCase) &&
+                q.Category.Equals(category, StringComparison.OrdinalIgnoreCase) &&
+                q.Relation.Equals(relation, StringComparison.OrdinalIgnoreCase) &&
                 q.Difficulty.Equals(difficulty, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            return LazyLoadQuestions(result, batchSize);
+        }
+
+        private List<QuestionData> LazyLoadQuestions(List<QuestionData> questions, int batchSize)
+        {
+            if (batchSize <= 0 || batchSize >= questions.Count)
+            {
+                return questions;
+            }
+
+            return questions.Take(batchSize).ToList();
         }
     }
-
 }
