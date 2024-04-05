@@ -5,8 +5,8 @@
     @UserName Profile
 </PageTitle>
 <div class="profile">
-        <h1>User Name</h1>
-        <p>Email: user@example.com</p>
+        <h1>@UserName</h1>
+        <p>Email: @UserEmail</p>
 
         <div class="language-preferences">
             <h2>Language Preferences</h2>
@@ -28,14 +28,15 @@
         </div>
 
         <!-- Other sections like Upcoming Lessons, Settings, Feedback, Achievements, Edit Profile can be added here -->
+                <!-- MainLayout.razor -->
+        <div class="navbar">
+            <LTNavLink LinkText="Profile" href="/profile" />
+            <LTNavLink LinkText="Lessons" href="/lessons" />
+            <LTNavLink LinkText="Schedule" href="/schedule" />
+            <!-- Add more LTNavLink components as needed -->
+        </div>
     </div>
-<!-- MainLayout.razor -->
-<div class="navbar">
-    <LTNavLink LinkText="Profile" href="/profile" />
-    <LTNavLink LinkText="Lessons" href="/lessons" />
-    <LTNavLink LinkText="Schedule" href="/schedule" />
-    <!-- Add more LTNavLink components as needed -->
-</div>
+
 <style>
     .navbar {
         position: fixed;
@@ -49,7 +50,6 @@
     }
 
     .navbar a {
-        display: inline-block;
         padding: 10px 20px;
         background-color: #555;
         color: white;
@@ -63,10 +63,15 @@
 
 </style>
 @code{
-    private string UserName
+    private static string UserName
     {
         get;
         set;
     } = "R232858E";
 
+    private string UserEmail
+    {
+        get;
+        set;
+    } = $"{UserName}@MSUSoftwareEngineering.com";
 }

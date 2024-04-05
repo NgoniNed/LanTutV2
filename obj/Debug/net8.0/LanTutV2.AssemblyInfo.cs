@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LanTutV2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d769324d816d0c9294aee54f583f7bfca307e55")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa79b6fafffdc2b15c2a9be2d2098277a634dfcd")]
 [assembly: System.Reflection.AssemblyProductAttribute("LanTutV2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LanTutV2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
