@@ -1,5 +1,6 @@
 @using LanTutV2.Data.Models
 <h3>ExerciseComponent</h3>
+<h3>@ShouldRerender</h3>
 <div class="question-container">
     <h4>
         Question @_questionTracker of @_totalQuestionsAvailable
@@ -28,6 +29,22 @@
     {
         get;
         set;
+    }
+    [Parameter]
+    public bool ShouldRerender { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (ShouldRerender)
+        {
+            _questionTracker = 1;
+            _progressPercentage = 1;
+            //request first question on component initialization
+            _exerciseQuestion = _lExercise.GetQuestion();
+            _totalQuestionsAvailable = _lExercise.GetQuestionSetCount;
+            StateHasChanged();
+            ShouldRerender = false;
+        }
     }
     private int _totalQuestionsAvailable;
     private double _timeSpentOnQuestion;

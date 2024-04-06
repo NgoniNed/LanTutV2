@@ -16,6 +16,17 @@
         set;
     }
     [Parameter]
+    public bool ShouldRerender { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (ShouldRerender)
+        {
+            StateHasChanged();
+        }
+    }
+
+    [Parameter]
     public EventCallback<LEU> userLEUChanged
     {
         get;

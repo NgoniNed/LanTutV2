@@ -38,6 +38,7 @@ namespace LanTutV2.Data.Models
         {
             languageInfor.CurrentLanguage = currentLang;
             languageInfor.LanguageList = listOflangs;
+            exerciseInfor.LanguageName = currentLang;
         }
         
         public LanguageStruct GetLanguageInformation()

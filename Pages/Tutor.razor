@@ -7,16 +7,35 @@
     Tutoring @session.SessionLEU.GetLanguageInformation().CurrentLanguage
 </PageTitle>
 
-<HorizontalComponent @bind-userLEU="session.SessionLEU"/>
-<ExerciseComponent _lExercise=@session.SessionExercise/>
+<select @onchange="LanguageSelectionChanged">
+    @foreach (var language in session.SessionLEU.GetLanguageInformation().LanguageList)
+    {
+        <option value="@language">@language</option>
+    }
+</select>
+
+<HorizontalComponent @bind-userLEU="session.SessionLEU" ShouldRerender="@shouldRerender"/>
+<ExerciseComponent _lExercise="session.SessionExercise" ShouldRerender="@shouldRerender"/>
 
 @code{
-    private LanTutSession? session;
+    private LanTutSession session;
 
     protected override async Task OnInitializedAsync()
     {
         session = new LanTutSession();
         session.SessionLEU = await SessionService.GetSessionLEUAsync();
         session.SessionExercise = await SessionService.GetSessionExerciseAsync();
-    }    
+    }
+    private bool shouldRerender = false;
+
+    private async Task LanguageSelectionChanged(ChangeEventArgs e)
+    {
+        if (session != null)
+        {
+            session.SessionLEU.SetLanguageInformation(e.Value.ToString(),session.SessionLEU.GetLanguageInformation().LanguageList);
+            session.SessionExercise = await SessionService.GetSessionExerciseAsync(e.Value.ToString());
+            shouldRerender = !shouldRerender;
+            StateHasChanged();
+        }
+    }
 }
