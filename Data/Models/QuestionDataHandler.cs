@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using LanTutV2.Data.Interface;
 
 namespace LanTutV2.Data.Models
 {
-    public class QuestionDataHandler
+    public class QuestionDataHandler 
     {
         private List<QuestionData> questionList;
 
@@ -64,37 +65,16 @@ namespace LanTutV2.Data.Models
             return false;
         }
 
-        public List<QuestionData> GetQuestionsByLanguage(string language)
+        public List<QuestionData> GetQuestionsByCriteria(string? category, string? relation, string? difficulty, string? language, int batchSize=1)
         {
-            return questionList.Where(q => q.Language.Equals(language, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
+            var filteredQuestions = questionList.Where(q =>
+                (string.IsNullOrEmpty(category) || q.Category.Equals(category, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrEmpty(relation) || q.Relation.Equals(relation, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrEmpty(difficulty) || q.Difficulty.Equals(difficulty, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrEmpty(language) || q.Language.Equals(language, StringComparison.OrdinalIgnoreCase)
+            )).ToList();
 
-        public List<QuestionData> GetQuestionsByCategory(string category)
-        {
-            return questionList.Where(q => q.Category.Equals(category, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
-
-        public List<QuestionData> GetQuestionsByRelation(string relation)
-        {
-            return questionList.Where(q => q.Relation.Equals(relation, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
-
-        public List<QuestionData> GetQuestionsByDifficulty(string difficulty)
-        {
-            return questionList.Where(q => q.Difficulty.Equals(difficulty, StringComparison.OrdinalIgnoreCase)).ToList();
-        }
-
-
-
-        public List<QuestionData> GetQuestionsByCriteria(string language, string category, string relation, string difficulty, int batchSize)
-        {
-            var result = questionList.Where(q =>
-                q.Language.Equals(language, StringComparison.OrdinalIgnoreCase) &&
-                q.Category.Equals(category, StringComparison.OrdinalIgnoreCase) &&
-                q.Relation.Equals(relation, StringComparison.OrdinalIgnoreCase) &&
-                q.Difficulty.Equals(difficulty, StringComparison.OrdinalIgnoreCase)).ToList();
-
-            return LazyLoadQuestions(result, batchSize);
+            return LazyLoadQuestions(filteredQuestions, batchSize);
         }
 
         private List<QuestionData> LazyLoadQuestions(List<QuestionData> questions, int batchSize)

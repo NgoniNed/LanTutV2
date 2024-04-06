@@ -1,4 +1,6 @@
 using LanTutV2.Data.Models;
+using Microsoft.AspNetCore.Hosting;
+
 namespace LanTutV2.Data.Services
 {
     //service for the tutoring and profile session which retrieves
@@ -12,23 +14,28 @@ namespace LanTutV2.Data.Services
         {
             return Task.FromResult(new LEU("Russian",new List<string>(){"Arabic","Dutch","French","Russian"},"R232858E",LanguageLevel.Amateur,"900 min",ExerciseCategoryEnum.Culture,LanguageLevel.Intermediate));
         }
-        public Task<Exercise> GetSessionExerciseAsync()
+
+        private IWebHostEnvironment _hostEnvironment;
+        public LanTutSessionService(IWebHostEnvironment hostEnvironment)
         {
-            return Task.FromResult(new Exercise(GetQuestionBank()));
+            _hostEnvironment = hostEnvironment;
         }
-        //method that requests a question bank object from the database
-        private List<Question> GetQuestionBank()
+
+        public async Task<Exercise> GetSessionExerciseAsync()
         {
-            List<Question> _QuestionBank = new List<Question>();
-            _QuestionBank.Add(new Question(1,"How do you say  please  in Russian?",new string[] {"Пожалуйста","Спасибо","Да","Нет"},"Пожалуйста",0,0,0));
-            _QuestionBank.Add(new Question(2,"What is the Russian word for  water ?",new string[] {"Чай","Молоко","Вода","Сок"},"Вода",0,0,0));
-            _QuestionBank.Add(new Question(3,"Translate  table  into Russian.",new string[] {"Стол","Стул","Кровать","Книга"},"Стол",0,0,0));
-            _QuestionBank.Add(new Question(4,"What does  спасибо  mean in English?",new string[] {"Goodbye","Hello","Thank you","Please"},"Thank you",0,0,0));
-            _QuestionBank.Add(new Question(5,"How would you say  excuse me  in Russian?",new string[] {"Извините","Привет","Пожалуйста","Да"},"Извините",0,0,0));
-            _QuestionBank.Add(new Question(6,"Translate  today  into Russian.",new string[] {"Завтра","Вчера","Сегодня","Зима"},"Сегодня",0,0,0));
-            //request from db api exercisequestion
-            return _QuestionBank;
+            var questions = await GetQuestionsByCriteriaAsync(null, null, null, "Dutch", 5);
+            return new Exercise(questions);
         }
+
+        public async Task<List<QuestionData>> GetQuestionsByCriteriaAsync(string? category, string? relation, string? difficulty, string? language, int batchSize)
+        {
+            QuestionDataHandler _QDH = new QuestionDataHandler();
+            _QDH.ReadDataFromCSV(Path.Combine(_hostEnvironment.ContentRootPath, "Data//QuestionBank.csv"));
+            var questions = _QDH.GetQuestionsByCriteria(category, relation, difficulty, language, batchSize);
+            
+            return questions;
+        }
+
         public void GetSessionProfileAsync()
         {
             

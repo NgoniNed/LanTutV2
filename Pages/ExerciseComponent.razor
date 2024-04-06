@@ -5,9 +5,9 @@
         Question @_questionTracker of @_totalQuestionsAvailable
     </h4>
     <p>
-        @_exerciseQuestion._question
+        @_exerciseQuestion.QuestionText
     </p>
-    @foreach (var answer in _exerciseQuestion._answers)
+    @foreach (var answer in _exerciseQuestion.Options)
     {
         <button @onclick="(e => SelectAnswer(answer))">@answer</button>
     }

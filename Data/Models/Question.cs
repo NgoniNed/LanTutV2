@@ -1,118 +1,53 @@
 namespace LanTutV2.Data.Models
 {
-    //store the question with answer
-    /*
-
-    *   stores number of questions affiliated with this exercise
-        checks if question answer is correct
-        question with answer and check result
-    */
+    // Represents a question with options and answer checking functionality
     public class Question
     {
-        public int QID
+        public int QID { get; private set; }
+        public string QuestionText { get; private set; }
+        public string[] Options { get; private set; }
+        private string CorrectAnswer { get; }
+
+        private double TimeSpent = 0;
+        private int Attempts = 0;
+        private int FailedAttempts = 0;
+        private int CorrectAttempts = 0;
+        private bool IsCorrect = false;
+
+        public Question(int qid, string questionText, string[] options, string correctAnswer, int attempts, int failedAttempts, int correctAttempts)
         {
-            get;
-            private set;
+            QID = qid;
+            QuestionText = questionText;
+            Options = options;
+            CorrectAnswer = correctAnswer;
+            Attempts = attempts;
+            FailedAttempts = failedAttempts;
+            CorrectAttempts = correctAttempts;
         }
 
-        public string _question
+        public void UpdateTimeSpent(double startTime, double endTime)
         {
-            get;
-            private set;
+            TimeSpent = Math.Abs(endTime - startTime);
         }
 
-        public string[] _answers
+        public void CheckAnswer(string userResponse)
         {
-            get;
-            private set;
-        }
-        
-        private string _correct;
-        private double _timespent=0;
-        private int _attempts=0;
-        private int _failedAttempts=0;
-        private int _correctAttempts=0;
-        private bool _isCorrect =false;
-
-        public Question(int _qid,string _ques, string[] _answ,string _corrt,int _lattempts,int _fattempts,int _cattempts)
-        {
-            this.QID = _qid;
-            this._question = _ques;
-            this._answers = _answ;
-            this._correct = _corrt;
-            this._attempts = _lattempts;
-            this._failedAttempts = _fattempts;
-            this._correctAttempts = _cattempts;
-        }
-
-        public int GetAttempts
-        {
-            get
+            if (Options.Contains(userResponse))
             {
-                return _attempts;
+                IsCorrect = CorrectAnswer == userResponse;
             }
         }
 
-        public int GetCorrectAttempts
-        {
-            get
-            {
-                return _correctAttempts;
-            }
-        }
+        public int GetAttempts => Attempts;
 
-        public int GetFailedAttempts
-        {
-            get
-            {
-                return _failedAttempts;
-            }
-        }
+        public int GetCorrectAttempts => CorrectAttempts;
 
-        public void UpdateTimeSpent(double _startTime,double _endTime)
-        {
-            //ensure times are in correct order
-            if(_startTime > _endTime && (_startTime ==_endTime))
-            {
-                _timespent = _endTime - _startTime;
-            }
-            else
-            {
-                _timespent = _startTime - _endTime;
-            }
+        public int GetFailedAttempts => FailedAttempts;
 
-        }
-
-        public void CheckAnswer(string _luserResponse)
+        public static Question ConvertFromQuestionData(QuestionData questionData)
         {
-            //check if response is part of answer options
-            if(_answers.Contains(_luserResponse))
-            {
-                //check if user response is correct
-                if(_correct == _luserResponse)
-                {
-                    _isCorrect = true;
-                }
-                else
-                {
-                    _isCorrect = false;
-                }
-            }
-        }
-
-        public void UpdateAttempts()
-        {
-            //increase the number of attempts
-            _attempts++;
-            //check to see if user got the answer correct
-            if(_isCorrect)
-            {
-                _correctAttempts++;
-            }
-            else
-            {
-                _failedAttempts++;
-            }
+            string[] options = { questionData.OptionA, questionData.OptionB, questionData.OptionC, questionData.OptionD };
+            return new Question(0, questionData.Question, options, questionData.CorrectAnswer, 0, 0, 0);
         }
     }
 }

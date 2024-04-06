@@ -4,7 +4,7 @@ namespace LanTutV2.Data.Models
 {
     public class Exercise : ILanTutExercise
     {
-        private List<Question> _questionSet
+        private List<QuestionData> _questionSet
         {
             get;
             set;
@@ -12,7 +12,7 @@ namespace LanTutV2.Data.Models
 
         private int _questionIndex;
 
-        public Exercise(List<Question> _lqset)
+        public Exercise(List<QuestionData> _lqset)
         {
             _questionSet = _lqset;
             _questionIndex = 0;
@@ -33,7 +33,7 @@ namespace LanTutV2.Data.Models
             {
                 _questionIndex = 0;
             }
-            return _questionSet[_questionIndex++];
+            return Question.ConvertFromQuestionData(_questionSet[_questionIndex++]);
         }
 
         public int ExerciseID
