@@ -1,0 +1,38 @@
+.rotating-wheel[b-3613tp5iuw]{
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.wheel[b-3613tp5iuw]{
+    width: 100%;
+    height: 100%;
+    border: 2px solid burlywood;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.option[b-3613tp5iuw]{
+    width:50%;
+    height:50%;
+    border: 2px solid brown;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: calc(50% -20px);
+    transform-origin: 50% 100%;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.option p[b-3613tp5iuw] {
+    margin: 0;
+    transform: rotate(-45deg);
+}
