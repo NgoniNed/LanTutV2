@@ -23,9 +23,12 @@ namespace LanTutV2.Data.Services
 
         public async Task<Exercise> GetSessionExerciseAsync()
         {
-            var questions = await GetQuestionsByCriteriaAsync(null, null, null, "Dutch", 5);
+            var sessionLEU = await GetSessionLEUAsync();
+
+            var questions = await GetQuestionsByCriteriaAsync(null, null, null, sessionLEU.GetLanguageInformation().CurrentLanguage, 5);
             return new Exercise(questions);
         }
+
 
         public async Task<List<QuestionData>> GetQuestionsByCriteriaAsync(string? category, string? relation, string? difficulty, string? language, int batchSize)
         {
